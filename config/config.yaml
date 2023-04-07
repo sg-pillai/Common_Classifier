@@ -1,0 +1,47 @@
+batch_size: 16
+img_size: 224
+balance_dataset: True
+mean: [0.42095104, 0.408939, 0.40319932] # provide the mean of the dataset if you know otherwise None
+std: [0.30645183, 0.3025921, 0.3009797] # provide the std of the dataset if you know otherwise None
+model:
+  name: 'mobilenet'
+  version: '50'
+num_epochs: 100
+lr:
+  find_lr: False
+  value: 0.0001
+  step_size: 20
+  gamma: 0.1
+config_options:
+  visualize_random_images: False
+resume:
+  status: False
+  path: '' # path to the checkpoint to continue training
+  log: '' # path to the log
+train_preprocessing:
+  - ColorJitter:
+      brightness: .4
+      hue: 0.1
+      saturation: 0.2
+      contrast: .2
+      probability: .3
+#  - Lambda:
+#      kernel: (5,5)
+#      sigma_x: 1
+#      probability: .3
+  - GaussianBlur:
+      kernel: 5
+      sigma: 1
+      probability: .3
+  - ToTensor
+  - Normalize
+test_preprocessing:
+  - ToTensor
+  - Normalize
+early_steps: 40
+weight_dir: "./exp" # path to save the weights
+train_data: './data/train' # path to the training data
+val_data: './data/val' # path to the validation data
+test_data: './data/test' # path to the test data
+notes: 'make classifier first run with new dataset. changed colojitter augmentation  prob to .4. Added random rotation and
+flip'

@@ -1,0 +1,13 @@
+classes: [] # list of the names of classes
+img_size: 224
+mean: [0.42095104, 0.408939, 0.40319932] 
+std: [0.30645183, 0.3025921, 0.3009797]
+do_transforms: True
+model:
+  name: 'mobilenet'
+  version: '50'
+model_type: "state_dict"  # state_dict or full_model based on how you saved the model, default is state_dict
+weights_dir: '' # path to saved weights
+checkpoint: 'checkpoint_45.pt' # the checkpoint to use for prediction
+img_path: '' # path to the images to test
+out_dir: '' # path to the output directory

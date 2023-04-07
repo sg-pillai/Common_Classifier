@@ -1,0 +1,12 @@
+# directories
+./carnocar
+./images
+./img_new
+./plots
+./weights
+./.idea
+./__pycache__
+
+# weight files
+*.pt
+*.ph
