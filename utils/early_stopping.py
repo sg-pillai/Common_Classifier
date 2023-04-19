@@ -1,7 +1,3 @@
-#  Copyright (c) Ikara Vision Systems GmbH, Kaiserslautern - All Rights Reserved
-#  Unauthorized copying of this file, via any medium is strictly prohibited
-#  Proprietary and confidential
-
 import os
 import numpy as np
 import torch

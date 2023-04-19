@@ -1,7 +1,3 @@
-#  Copyright (c) Ikara Vision Systems GmbH, Kaiserslautern - All Rights Reserved
-#  Unauthorized copying of this file, via any medium is strictly prohibited
-#  Proprietary and confidential
-
 """
 Functions to help different visualizations
 """
